@@ -1,4 +1,19 @@
 /* Site-wide styling here */
-body {
+body 
+{
     background-color: cornsilk; /* Bara för att testa, ÄNDRA eller ta bort! */
+    
+}
+.casinoname
+{
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(63, 63, 63, 0.664);
+    text-decoration: underline;
+}
+#anno
+{
+    text-align: center;
+    text-decoration: underline 4px rgba(1, 120, 255, 0.664);
 }
