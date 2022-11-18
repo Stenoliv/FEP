@@ -1,9 +1,15 @@
-document.querySelector(".cm").addEventListener('click',function(daychange)
+document.querySelector(".cm").addEventListener('click', monday)
 {
-    
-    let now = new Date();
-    
+    function monday()
+    {
+        mon = new Date()
         
-    
+        if (mon.getDay()!= 1)
+        {
+            mon.setDate(11);
+            
+        }
+    }
+    console.log(mon.getDay());
+}
 
-}, 1000);

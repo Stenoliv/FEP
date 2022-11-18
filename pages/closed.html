@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/main.css"> <!-- importera main-CSS-->
-    <link rel="stylesheet" href="../assets/css/closed.css"> <!-- importera sidspecifik CSS vid behov -->
     <title>Closed</title>
 </head>
 <body>
@@ -15,9 +14,11 @@
         <div class="clock"></div>
 
     </header>
-    <h2 id="anno">The Casino Is Closed At The Moment!</h2>
-
-    <div class="daychange">
+    <div class="closed">
+        <h2>The Casino is closed for the weekend come back later!</h2>
+        <p id="timetilopen"></p>
+    </div>
+    <div id="daychange">
         <button class="change">Change active day</button>
         <div class="days">
             <button class="cm">Monday</button>
@@ -28,11 +29,9 @@
             <button class="cs">Saturday</button>
             <button class="cS">Sunday</button>
         </div>
-
     </div>
     
 
-    <script src="../assets/js/daychanger.js"></script>
-    <script src="../assets/js/main.js"></script> <!-- importera main.js (OBS ../ )-->
+    <script src="../assets/js/daychanger.js"></script> 
 </body>
 </html>

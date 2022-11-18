@@ -1,16 +1,29 @@
 /* Site-wide JS i den här filen (t.ex. huvudmenyn) */
 
 console.log('main.js init'); // För att se att skriptet laddats in
+//Boolen manual is the main switch for if the casino is open / 0 means it is closed, 1 means it is open:
+let manual = 0;
+var auto = 1;
+let info; 
+close = new Date()
 
-setInterval(function()
+setInterval (function wknd()
 {
-    let d = new Date();
-    if(d == Date || d== "saturday");
+    if(close.getDay()=== 6 || close.getDay() === 0 || manual == 0)
     {
-        window.open(/assets/pages/closed);
+        auto = 0 
+        console.log("if runs")
+        window.open(src = "http://127.0.0.1:5500/pages/closed.html","_self")
     }
-}, 1000);
-
+    else
+    {
+        auto = 1
+    }
+    console.log(manual);
+    console.log(auto);
+},100)
+    
+//clock
 setInterval(function()
 {
     let t = new Date();
@@ -21,7 +34,8 @@ setInterval(function()
 }, 1000);
 
 //Funktion för att skapa användarnamn
-document.querySelector("submit-btn").addEventListener('click', function (submit)
+document.querySelector("#submit-btn").addEventListener('click', submit);
+function submit()
 {
     
     let firstname = document.getElementById('firstname').value;
@@ -46,7 +60,7 @@ document.querySelector("submit-btn").addEventListener('click', function (submit)
     let use2 = lastname.slice(0, 4);
     let usrn = use2.concat(use1);
     usrn = usrn.toLowerCase();
-    let output = ("Hello " + firstname + " your username is: " + usrn);
+    let output = ("Hello " + firstname + " your username is: " + usrn + "Welcome to Razver!");
     document.querySelector('#out').innerText = output;
     }
-});
+};

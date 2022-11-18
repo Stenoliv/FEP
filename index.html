@@ -14,16 +14,32 @@
         <div class="clock"></div>
     </header>
 
-    <div><h2>Let us create you a username! Please give your first name last name and your age!</h2></div>
-    <input id="firstname" type="text" placeholder="First name">
-    <input id="lastname" type="text" placeholder="Last name">
-    <input id="age" type="number" placeholder="Your age">
-    <input id="submit-btn" type="button" value="Submit">
-
+    <div>
+        <h2>Let us create you a username! Please give your first name last name and your age!</h2>
+    </div>
+    <div>
+        <input id="firstname" type="text" placeholder="First name">
+        <input id="lastname" type="text" placeholder="Last name">
+        <input id="age" type="number" placeholder="Your age">
+        <input id="submit-btn" type="button" value="Submit">
+    </div>
     <div>
         <p id="out"></p>
     </div>
-    
+    <div id="daychange">
+        <button class="change">Change active day</button>
+        <div class="days">
+            <button class="cm">Monday</button>
+            <button class="ct">Tuesday</button>
+            <button class="cw">Wednesday</button>
+            <button class="cT">Thursday</button>
+            <button class="cf">Friday</button>
+            <button class="cs">Saturday</button>
+            <button class="cS">Sunday</button>
+        </div>
+
+    </div>
+    <script src="./assets/js/daychanger.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
