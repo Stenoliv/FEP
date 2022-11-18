@@ -1,0 +1,19 @@
+.Bank {
+    display: block;
+    justify-content: center;
+    margin-left: 25%;
+    width: 50%;
+    text-align: center;
+}
+
+.saldoMeny {
+    display: flex;
+    justify-content: center;
+}
+
+.automatKnappar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
