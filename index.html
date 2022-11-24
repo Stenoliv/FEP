@@ -10,14 +10,20 @@
 <body>
     <header>
         <h1 class="casinoname">Casino Razver</h1>
-        <nav></nav>
+        <nav id="nav"></nav>
         <div class="clock"></div>
     </header>
 
-    <div>
+    <div id="textopen">
         <h2>Let us create you a username! Please give your first name last name and your age!</h2>
     </div>
-    <div>
+    <div id="textclosed">
+        <h2>The casino is closed for the weekend time until open again: </h2>
+        <div>
+            <p id="openIn"></p>
+        </div>
+    </div>
+    <div id="makeuser">
         <input id="firstname" type="text" placeholder="First name">
         <input id="lastname" type="text" placeholder="Last name">
         <input id="age" type="number" placeholder="Your age">
@@ -27,15 +33,14 @@
         <p id="out"></p>
     </div>
     <div id="daychange">
-        <button class="change">Change active day</button>
-        <div class="days">
-            <button class="cm">Monday</button>
-            <button class="ct">Tuesday</button>
-            <button class="cw">Wednesday</button>
-            <button class="cT">Thursday</button>
-            <button class="cf">Friday</button>
-            <button class="cs">Saturday</button>
-            <button class="cS">Sunday</button>
+        <select id="days">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
         </div>
 
     </div>
