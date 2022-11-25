@@ -5,11 +5,10 @@ console.log('main.js init'); // För att se att skriptet laddats in
 let manual = 1;
 var auto = 1;
 let info; 
-close = new Date();
-
-document.addEventListener("DOMContentLoaded",function wknd()
+weekend = new Date();
+function wknd()
 {
-    if(close.getDay()=== 6 || close.getDay() === 0 || manual == 0)
+    if(weekend.getDay()=== 6 || weekend.getDay() === 0 || manual == 0)
     {
         auto = 0 ;
         document.querySelector('#makeuser').style.display = 'none';
@@ -23,7 +22,31 @@ document.addEventListener("DOMContentLoaded",function wknd()
     }
     console.log(manual);
     console.log(auto);
-});
+}
+document.addEventListener('DOMContentLoaded',wknd);
+
+//Check what day it is and make it active in the daychanger
+const days = ["sun","mon","tue","wed","thu","fri","sat"];
+for(let i = 0 ; weekend.getDay() != i ; i++)
+{
+    console.log(i);
+    function whatDay() 
+    {
+        const day = document.querySelector('#days');
+        day.value = days[i];
+    }
+};
+
+//Changes the day based on selected day in the selector
+for(let i = 0; i != document.querySelector("#days").selectedIndex; i++)
+{
+    
+    weekend.setDate((document.querySelector("#days").selectedIndex)-1)
+
+    console.log(weekend);
+
+    wknd();
+}
 
 //Time until open
 //calculate time between now and next monday at 00:01
@@ -63,34 +86,4 @@ setInterval(function()
     
 }, 1000);
 
-//Funktion för att skapa användarnamn
-document.querySelector("#submit-btn").addEventListener('click', submit);
-function submit()
-{
-    
-    let firstname = document.getElementById('firstname').value;
-    let lastname = document.getElementById('lastname').value;
-    let age = document.getElementById('age').value;
-    
-    if(firstname == "")
-    {
-        alert("Please enter a firstname!");
-    }
-    if(lastname == "")
-    {
-        alert("Please enter a lastname!");
-    }
-    if(age < 18)
-    {
-        alert("You are too young to play go away!")
-    }
-    else
-    {
-    let use1 = firstname.slice(0, 3);
-    let use2 = lastname.slice(0, 4);
-    let usrn = use2.concat(use1);
-    usrn = usrn.toLowerCase();
-    let output = ("Hello " + firstname + " your username is: " + usrn + " Welcome to Razver!");
-    document.querySelector('#out').innerText = output;
-    }
-};
+
