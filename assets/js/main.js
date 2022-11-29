@@ -26,28 +26,29 @@ function wknd()
 document.addEventListener('DOMContentLoaded',wknd);
 
 //Check what day it is and make it active in the daychanger
-const days = ["sun","mon","tue","wed","thu","fri","sat"];
-for(let i = 0 ; weekend.getDay() != i ; i++)
+document.addEventListener('DOMContentLoaded', when)
+function when()
 {
-    console.log(i);
-    function whatDay() 
+    const days = ["0","1","2","3","4","5","6"];
+    for(let i = 0 ; weekend.getDay() != i -1; i++)
     {
-        const day = document.querySelector('#days');
-        day.value = days[i];
+        function whatDay() 
+        {
+            const day = document.querySelector('#days');
+            day.value = days[i];
+        }
+        whatDay()
     }
 };
 
 //Changes the day based on selected day in the selector
-for(let i = 0; i != document.querySelector("#days").selectedIndex; i++)
-{
+
+    document.querySelector('#days').addEventListener('change', function cd()
+    {
+            document.querySelector('#days').value = weekend.getDay();
+            weekend.getDay;
+    })
     
-    weekend.setDate((document.querySelector("#days").selectedIndex)-1)
-
-    console.log(weekend);
-
-    wknd();
-}
-
 //Time until open
 //calculate time between now and next monday at 00:01
 var open = new Date();
