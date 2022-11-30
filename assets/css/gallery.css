@@ -1,0 +1,46 @@
+.thumb
+{
+    height: 100px;
+    cursor: pointer;
+    
+}
+#largeImage
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+#largeImage > img
+{
+    max-width: 90%;
+    max-height: 90%;
+}
+#colormenu
+{
+    display: none;
+}
+#colorchange
+{
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+}
+#x
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 94%;
+    margin-top: 2% ;
+    width: 5%;
+    height: 5%;
+    display: none;
+    z-index: 2;
+    
+}
