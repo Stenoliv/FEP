@@ -13,8 +13,8 @@ function wknd()
         auto = 0 ;
         document.querySelector('#makeuser').style.display = 'none';
         document.querySelector('#nav').style.display = 'none';
-        document.querySelector('#textopen').style.display = 'none'
-        document.querySelector('#textclosed').style.display = 'flex'
+        document.querySelector('#textopen').style.display = 'none';
+        document.querySelector('#textclosed').style.display = 'flex';
     }
     else
     {
