@@ -2,13 +2,13 @@
 //Changes backgroundcolour of the page with a select menu with a few alternatives
 document.querySelector("#colorchange").addEventListener('click', function ()
 {
-    if (document.querySelector("#colormenu").style.display == 'none')
+    if (document.querySelector("#colormenu").style.display == 'flex')
     {
-    document.querySelector("#colormenu").style.display = 'flex';
+    document.querySelector("#colormenu").style.display = 'none';
     }
     else
     {
-        document.querySelector("#colormenu").style.display = 'none';
+        document.querySelector("#colormenu").style.display = 'flex';
     }
 });
 
@@ -23,7 +23,7 @@ document.querySelector("#blue").value = localStorage.getItem("blue");
 document.querySelector('#colors').addEventListener('change', function cd() {
     let active = document.querySelector("#colors").value;
     const colorArr = ['#F0FFD3', '#22005D', '#A2FFFF', '#FF0080', '#2D2D2D'];
-    i = active;
+    let i = active;
     
     document.querySelector('body').style.backgroundColor = colorArr[i];
     localStorage.setItem("background", colorArr[i]);

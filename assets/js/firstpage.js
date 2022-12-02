@@ -1,8 +1,15 @@
 //Funktion för att skapa användarnamn
+const user = localStorage.getItem("usrname");
+if(user !=null)
+{
+    document.querySelector('#out').innerText = "Welcome back "+ user + "!";
+    document.querySelector('#olduser').style.display = 'flex';
+    document.querySelector('#newuser').style.display = 'none';
+}
+else{
 document.querySelector("#submit-btn").addEventListener('click', submit);
 function submit()
 {
-    
     let firstname = document.getElementById('firstname').value;
     let lastname = document.getElementById('lastname').value;
     let age = document.getElementById('age').value;
@@ -17,7 +24,7 @@ function submit()
     }
     if(age < 18)
     {
-        alert("You are too young to play go away!")
+        alert("You are too young to play go away!");
     }
     else
     {
@@ -25,10 +32,12 @@ function submit()
     let use2 = lastname.slice(0, 4);
     let usrn = use2.concat(use1);
     usrn = usrn.toLowerCase();
-    let output = ("Hello " + firstname + " your username is: " + usrn + " Welcome to Razver!");
+    let output = ("Hello " + firstname + " your username is: " + usrn + ", Welcome to Razver!");
     document.querySelector('#out').innerText = output;
+    localStorage.setItem("usrname",usrn);
     }
 };
+}
 //Check what day it is and make it active in the daychanger
 document.addEventListener('DOMContentLoaded', when)
 function when()
@@ -49,8 +58,10 @@ function when()
 
 document.querySelector('#days').addEventListener('change', function cd()
 {
-        document.querySelector('#days').value = weekend.getDay();
-        weekend.getDay;
+    const rn = document.querySelector("#days").value;
+    let k = rn - weekend.getDay();
+    weekend.setDate(weekend.getDate()+k)
+    wknd();
 })
 
 //Time until open

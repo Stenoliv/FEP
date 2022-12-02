@@ -19,6 +19,10 @@ function wknd()
     else
     {
         auto = 1;
+        document.querySelector('#makeuser').style.display = 'flex';
+        document.querySelector('#nav').style.display = 'flex';
+        document.querySelector('#textopen').style.display = 'flex';
+        document.querySelector('#textclosed').style.display = 'none';
     }
     console.log(manual);
     console.log(auto);
@@ -29,8 +33,8 @@ document.addEventListener('DOMContentLoaded',wknd);
 setInterval(function()
 {
     let t = new Date();
-    t = t.toUTCString();
-    t = t.slice(0,26);
+    t = t.toString();
+    t = t.slice(0,25);
     document.querySelector('.clock').innerText = t ;
     
 }, 1000);

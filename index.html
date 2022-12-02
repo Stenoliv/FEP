@@ -14,7 +14,28 @@
 <body>
     <header>
         <h1 class="casinoname">Casino Razver</h1>
-        <nav id="nav"></nav>
+        <!-- Default dropright button -->
+            <div class="btn-group dropright">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropright
+              </button>
+              <div class="dropdown-menu">
+                <!-- Dropdown menu links -->
+              </div>
+            </div>
+            
+            <!-- Split dropright button -->
+            <div class="btn-group dropright">
+              <button type="button" class="btn btn-secondary">
+                Split dropright
+              </button>
+              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropright</span>
+              </button>
+              <div class="dropdown-menu">
+                <!-- Dropdown menu links -->
+              </div>
+            </div>
         <div class="clock"></div>
         <button id="colorchange" type="button">Color Settings</button>
         <div id="colormenu">
@@ -38,7 +59,8 @@
     </header>
 
     <div id="textopen">
-        <h2>Let us create you a username! Please give your first name last name and your age!</h2>
+        <h2 id="newuser">Let us create you a username! Please give your first name last name and your age!</h2>
+        <h2 id="olduser">Welcome! You can continue to play as the current user or crate a new one!</h2>
     </div>
     <div id="textclosed">
         <h2>The casino is closed fornow time until open again: </h2>
