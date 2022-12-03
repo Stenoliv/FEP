@@ -42,3 +42,7 @@ body
 {
     display: none;
 }
+#menuitems
+{
+    display: block;
+}

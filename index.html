@@ -15,27 +15,32 @@
     <header>
         <h1 class="casinoname">Casino Razver</h1>
         <!-- Default dropright button -->
+          <nav>  
             <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropright
+                ☰
               </button>
               <div class="dropdown-menu">
-                <!-- Dropdown menu links -->
+                <p id="navigation"></p>
               </div>
             </div>
-            
-            <!-- Split dropright button -->
-            <div class="btn-group dropright">
-              <button type="button" class="btn btn-secondary">
-                Split dropright
-              </button>
-              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropright</span>
-              </button>
-              <div class="dropdown-menu">
-                <!-- Dropdown menu links -->
+          </nav>
+            <!--<nav class="navbar navbar-expand-lg bg-primary ">
+              <div class="container-fluid">
+                  <a class="navbar-brand text-white" href="#">≡</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                      <div class="navbar-nav"></div>
+                  </div>
               </div>
-            </div>
+          </nav>-->
+      
+        
+      
+      
         <div class="clock"></div>
         <button id="colorchange" type="button">Color Settings</button>
         <div id="colormenu">
@@ -46,7 +51,6 @@
                 <option value="3">Pink</option>
                 <option value="4">Black</option>
             </select>
-            <br>
             <label>RED</label>
             <input type="range" id="red" value="0" min="0" max="255">
 
@@ -61,12 +65,6 @@
     <div id="textopen">
         <h2 id="newuser">Let us create you a username! Please give your first name last name and your age!</h2>
         <h2 id="olduser">Welcome! You can continue to play as the current user or crate a new one!</h2>
-    </div>
-    <div id="textclosed">
-        <h2>The casino is closed fornow time until open again: </h2>
-        <div>
-            <p id="openIn"></p>
-        </div>
     </div>
     <div id="makeuser">
         <input id="firstname" type="text" placeholder="First name">
@@ -91,6 +89,7 @@
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/firstpage.js"></script>
     <script src="./assets/js/colorchanger.js"></script>
+    <script src="./assets/js/daychanger.js"></script>
 </body>
 
 </html>

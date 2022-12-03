@@ -11,16 +11,13 @@ function wknd()
     if(weekend.getDay()=== 6 || weekend.getDay() === 0 || manual == 0)
     {
         auto = 0 ;
-        document.querySelector('#makeuser').style.display = 'none';
-        document.querySelector('#nav').style.display = 'none';
-        document.querySelector('#textopen').style.display = 'none';
-        document.querySelector('#textclosed').style.display = 'flex';
+        window.location.replace("../closed.html");
+        
     }
     else
     {
         auto = 1;
         document.querySelector('#makeuser').style.display = 'flex';
-        document.querySelector('#nav').style.display = 'flex';
         document.querySelector('#textopen').style.display = 'flex';
         document.querySelector('#textclosed').style.display = 'none';
     }
@@ -38,4 +35,12 @@ setInterval(function()
     document.querySelector('.clock').innerText = t ;
     
 }, 1000);
+
+//navigation
+const navelements = [
+    {menuTitle: "Home", url:"../index.html"},
+    {menuTitle: "Gallery", url:"../pages/gallery.html"},
+    {menuTitle: "RPS", url:"../pages/ssp.html"},
+    {menuTitle: "Memgame", url:"../pages/memgame.html"}
+];
 
