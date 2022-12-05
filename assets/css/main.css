@@ -19,10 +19,6 @@ body
 {
     display: flex;
 }
-#textclosed
-{
-    display: none;
-}
 #openIn
 {
     font-size: 22px;
@@ -45,4 +41,14 @@ body
 #menuitems
 {
     display: block;
+}
+.stylenav
+{
+    display: block;
+    background-color: #888787;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
 }

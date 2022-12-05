@@ -1,7 +1,7 @@
 //Time until open
 //calculate time between now and next monday at 00:01
 var open = new Date();
-open.setDate((open.getDate()+(1+7-open.getDay())%7));
+open.setDate((open.getDate()+(1+7-open.getDay())%7)||7);
 open.setHours(0,1,0,0)
 
 //Convert the time from milliseconds to hh/mm/ss

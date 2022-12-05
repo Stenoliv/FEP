@@ -6,23 +6,21 @@ let manual = 1;
 var auto = 1;
 let info; 
 weekend = new Date();
+console.log(weekend);
 function wknd()
 {
+    const adr =window.location.pathname.split("/");
     if(weekend.getDay()=== 6 || weekend.getDay() === 0 || manual == 0)
     {
-        auto = 0 ;
-        window.location.replace("../closed.html");
-        
+        window.location.replace("../pages/closed.html");
+        console.log("clsoed");
     }
-    else
+    else if(adr[adr.length-1] != "index.html")
     {
-        auto = 1;
-        document.querySelector('#makeuser').style.display = 'flex';
-        document.querySelector('#textopen').style.display = 'flex';
-        document.querySelector('#textclosed').style.display = 'none';
+        //window.location.replace("./index.html");
+        console.log("open" + adr[adr.length-1]);
     }
-    console.log(manual);
-    console.log(auto);
+    console.log(weekend);
 }
 document.addEventListener('DOMContentLoaded',wknd);
 
@@ -43,4 +41,9 @@ const navelements = [
     {menuTitle: "RPS", url:"../pages/ssp.html"},
     {menuTitle: "Memgame", url:"../pages/memgame.html"}
 ];
-
+    for (item of navelements) {
+        document.querySelector('#navbar123').innerHTML += `
+            <a class="stylenav" href="${item.url}">${item.menuTitle}</a>
+        `;
+    }
+    
