@@ -2,3 +2,12 @@
 body {
     background-color: teal; /* Bara för att testa, ÄNDRA eller ta bort! */
 }
+.gameButton {
+    width: 33%;
+    background-color: transparent;
+    border: 0;
+}
+.gameButton img {
+    height: 300px;
+    width: 100%;
+}
