@@ -1,0 +1,98 @@
+:root {
+    --highlightedScale: calc(var(--ScaleX) * 1.05);
+    --transX: calc((var(--highlightedScale) - var(--ScaleX))*-1/2);
+    --transY: calc((var(--highlightedScale) - var(--ScaleX))*-1/1.5);
+    --ScaleX: 200px;
+    --ScaleY: 290px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.gamebar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamebar h2 {
+    margin: 0;
+    color: white;
+}
+
+.gameStartBox {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+
+.BoardY {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    margin: 0;
+}
+.card {
+    width: var(--ScaleX);
+    height: var(--ScaleY);
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+}
+.card-front, .card-back {
+    width: var(--ScaleX);
+    height: var(--ScaleY);
+    position: absolute;
+    backface-visibility: hidden;
+}
+.card-front {
+    transform: rotateY(-180deg);
+}
+.card.flipCard {
+    transform: rotateY(-180deg);
+}
+
+.playingCard {
+    max-width: calc(var(--ScaleX) + 50px);
+    max-height: calc(var(--ScaleY) + 50px);
+}
+.playingCard use {
+    transform: translate(-90px,-125px);
+}
+.hoveredCard {
+    width: var(--highlightedScale);
+    transform: translate( var(--transX), var(--transY));
+}
+
+@media screen and (max-width: 1200px) {
+    :root {
+        --ScaleX: 150px;
+        --ScaleY: 217.5px;
+    }
+    @media screen and (max-width: 920px) {
+        :root {
+            --ScaleX: 100px;
+            --ScaleY: 145px;
+        }
+        @media screen and (max-width: 610px) {
+            :root {
+                --ScaleX: 50px;
+                --ScaleY: 72.5px;
+            }
+        }
+    }
+}
