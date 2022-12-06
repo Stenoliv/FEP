@@ -37,7 +37,7 @@ const navelements = [
     {menuTitle: "Home", url:"../index.html"},
     {menuTitle: "Gallery", url:"../pages/gallery.html"},
     {menuTitle: "RPS", url:"../pages/ssp.html"},
-    {menuTitle: "Memgame", url:"../pages/memgame.html"}
+    {menuTitle: "Memgame", url:"../pages/mspel.html"}
 ];
     for (item of navelements) {
         document.querySelector('#navbar123').innerHTML += `
