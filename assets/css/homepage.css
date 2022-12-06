@@ -1,0 +1,89 @@
+#mainBackGround
+{
+    z-index: -1;
+}
+body
+{
+    background-image: url("../images/casinobg.jpg");
+    background-repeat: no-repeat;
+}
+.imglink
+{
+    width: 10%;
+}
+.mainsec
+{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EAEAEA;
+}
+#out
+{
+    text-align: center;
+    font-size: 30px;
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+}
+#selection
+{
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 40px;
+}
+.icon
+{
+    width: 18%;
+    display: flex;
+    margin:auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+#makeuser
+{
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+}
+#firstname
+{
+    background-color: #cad8ff;
+    margin: 10px;
+    border-radius: 6px;
+}
+#lastname
+{
+    background-color: #cad8ff;
+    margin: 10px;
+    border-radius: 6px;
+}
+#age
+{
+    background-color: #cad8ff;
+    margin: 10px;
+    border-radius: 6px;
+}
+#submit-btn
+{
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #cad8ff;
+    width: 10%;
+}
+#textopen
+{
+    
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    
+}
+#olduser
+{
+    display: none;
+}
+

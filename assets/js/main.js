@@ -3,22 +3,20 @@
 console.log('main.js init'); // För att se att skriptet laddats in
 //Boolen manual is the main switch for if the casino is open / 0 means it is closed, 1 means it is open:
 let manual = 1;
-var auto = 1;
-let info; 
+
 weekend = new Date();
 console.log(weekend);
+
 function wknd()
 {
     const adr =window.location.pathname.split("/");
     if(weekend.getDay()=== 6 || weekend.getDay() === 0 || manual == 0)
     {
         window.location.replace("../pages/closed.html");
-        console.log("clsoed");
     }
-    else if(adr[adr.length-1] != "index.html")
+    else if(weekend.getDay()===1,2,3,4,5 && adr[2] =="closed.html")
     {
-        //window.location.replace("./index.html");
-        console.log("open" + adr[adr.length-1]);
+        window.location.replace("../index.html");
     }
     console.log(weekend);
 }

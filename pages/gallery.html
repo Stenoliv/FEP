@@ -6,60 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/css/gallery.css">
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="../pictures/casinochip.ico">
+    <link rel="stylesheet" href="../assets/css/gallery.css">
     <title>Casino Razver</title>
 </head>
 <body>
+  <section class="mainsec">
     <header>
         <h1 class="casinoname">Casino Razver</h1>
         <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-secondary p-4"id="navbar123">
-              
-            </div>
+          <div class="bg-secondary p-4"id="navbar123">
+            
           </div>
-          <nav class="navbar navbar-dark bg-secondary">
-            <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </div>
-          </nav>
-        <div class="clock"></div>
-        <button id="colorchange" type="button">Color Settings</button>
-        <div id="colormenu">
-            <select id="colors">
-                <option value="0">White</option>
-                <option value="1">Purple</option>
-                <option value="2">Blue</option>
-                <option value="3">Pink</option>
-                <option value="4">Black</option>
-            </select>
-            <br>
-            <label>RED</label>
-            <input type="range" id="red" value="0" min="0" max="255">
-
-            <label>GREEN</label>
-            <input type="range" id="green" value="0" min="0" max="255">
-
-            <label>BLUE</label>
-            <input type="range" id="blue" value="0" min="0" max="255">
         </div>
+        <nav class="navbar navbar-dark bg-secondary">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                    
+                    <button id="colorchange" class="bg-secondary" type="button"><img id="settings"src="../assets/images/settings.png"></button>
+                </span>
+            </button>
+          </div>
+        </nav>
+        <div id="colormenu" class="bg-secondary">
+            
+          <div id="divred">
+              <label>RED</label>
+              <input type="range" id="red" value="0" min="0" max="255">
+          </div>
+
+          <div id="divgreen">
+              <label>GREEN</label>
+              <input type="range" id="green" value="0" min="0" max="255">
+          </div>
+
+          <div id="divblue">
+              <label>BLUE</label>
+              <input type="range" id="blue" value="0" min="0" max="255">
+          </div>
+
+          <select id="colors">
+              <option value="0">White</option>
+              <option value="1">Purple</option>
+              <option value="2">Blue</option>
+              <option value="3">Pink</option>
+              <option value="4">Black</option>
+          </select>
+      </div>
+        <div>
+          <p class="clock"></p>
+      </div>
     </header>
     <hr>
 
-    <picture>
+    <picture id="thumbnails">
         <img src ="../pictures/bar.jpg" alt="Image of a bar" class="thumb" data-img="../pictures/Bar_large.jpg">
         <img src="../pictures/interior.jpg" alt="Image of a interior" class="thumb" data-img="../pictures/Interior_large.jpg">
         <img src="../pictures/money.jpg" alt="Image of money" class="thumb" data-img="../pictures/Money_large.jpg">
         <img src="../pictures/porsche.jpg" alt="Image of a porsche" class="thumb" data-img="../pictures/Porsche_large.jpg">
         <img src="../pictures/winner.jpg" alt="Image of a winnner" class="thumb" data-img="../pictures/Winner_large.jpg">
         <img src="../pictures/yacht.jpg" alt="Image of a yacht" class="thumb" data-img="../pictures/Yacht_large.jpg">
+        <img src="../pictures/frogthumb.jpg" alt="Image of a rich frog" class="thumb" data-img="../pictures/frog.jpg">
+        <img src="../pictures/boozethumb.jpg" alt="Imgae of alcohol" class="thumb" data-img="../pictures/booze.jpg">
+        <img src="../pictures/garagethumb.jpg" alt="Image if a garage" class="thumb" data-img="../pictures/garage.jpg">
+        <img src="../pictures/richwomanthumb.jpg" alt="Image of a woman" class="thumb" data-img="../pictures/richwomanL.jpg">
+        <img src="../pictures/catthumb.jpg" alt="Image of a rich cat" class="thumb" data-img="../pictures/cat.jpg">
+        <img src="../pictures/coincatthumb.jpg" alt="Image of coins and a cat" class="thumb" data-img="../pictures/coincat.jpg">
+        <img src="../pictures/rulettithumb.jpg" alt="Image of a roulette game" class="thumb" data-img="../pictures/ruletti.jpg">
+        <img src="../pictures/cardstumb.jpg" alt="Image of playingcards" class="thumb" data-img="../pictures/cards.jpg">
+        <img src="../pictures/hackerthumb.jpg" alt="Image of a woman and money" class="thumb" data-img="../pictures/hacker.jpg">
     </picture>
     <div id="largeImage"><img></div>
     <img id="x" src="../pictures/X.png">
+
+  </section>
+  <footer  class="foot">
+    <div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nisi, cumque corporis sapiente ut natus? Dicta libero odio officiis voluptatem consectetur soluta molestias nisi porro! Quaerat officiis reiciendis impedit est. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ratione laboriosam, quia expedita debitis labore amet optio! Alias qui pariatur eius? Provident accusamus expedita culpa id obcaecati quasi nobis repellat!</p>
+    </div>
+</footer>
+    <script src="../assets/js/main.js"></script>
     <script src="../assets/js/colorchanger.js"></script>
     <script src="../assets/js/lightbox.js"></script>
-    <script src="../assets/js/main.js"></script>
 </body>
 </html>

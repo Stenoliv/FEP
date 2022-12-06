@@ -5,14 +5,17 @@ document.querySelector("#colorchange").addEventListener('click', function ()
     if (document.querySelector("#colormenu").style.display == 'flex')
     {
     document.querySelector("#colormenu").style.display = 'none';
+    document.querySelector("#daychange").style.display = 'none'
     }
     else
     {
         document.querySelector("#colormenu").style.display = 'flex';
+        document.querySelector("#daychange").style.display = 'flex'
     }
 });
 
 document.body.style.backgroundColor = localStorage.getItem("background");
+document.querySelector('.mainsec').style.backgroundColor = localStorage.getItem("background");
 document.body.style.color = localStorage.getItem("textcolour");
 document.querySelector("#colors").value = localStorage.getItem("activesel");
 document.querySelector("#red").value = localStorage.getItem("red");
@@ -22,10 +25,11 @@ document.querySelector("#blue").value = localStorage.getItem("blue");
 
 document.querySelector('#colors').addEventListener('change', function cd() {
     let active = document.querySelector("#colors").value;
-    const colorArr = ['#F0FFD3', '#22005D', '#A2FFFF', '#FF0080', '#2D2D2D'];
+    const colorArr = ['#EAEAEA', '#22005D', '#345DB0', '#CC3A64', '#2D2D2D'];
     let i = active;
     
     document.querySelector('body').style.backgroundColor = colorArr[i];
+    document.querySelector('.mainsec').style.backgroundColor = colorArr[i];
     localStorage.setItem("background", colorArr[i]);
     localStorage.setItem("activesel", i);
 })

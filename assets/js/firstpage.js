@@ -38,4 +38,12 @@ function submit()
     }
 };
 }
-
+//To open different sides when clicking icons on first page
+document.querySelector("#memgame").addEventListener('click', function()
+{
+    window.location.assign("./pages/mspel.html");
+})
+document.querySelector("#rpsgame").addEventListener('click', function()
+{
+    window.location.assign("./pages/ssp.html");
+})

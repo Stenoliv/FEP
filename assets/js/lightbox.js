@@ -1,6 +1,5 @@
 document.querySelectorAll(".thumb").forEach((thing)=> 
 {
-    console.log(thing);
 
     thing.addEventListener('click', ( )=> 
     {

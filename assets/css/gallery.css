@@ -2,7 +2,20 @@
 {
     height: 100px;
     cursor: pointer;
-    
+    margin: 10px;
+    margin-bottom: 40px;
+}
+#thumbnails
+{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 95%;
+}
+body
+{
+    background-image: url("../images/redcurtains.jpg");
+    background-repeat: no-repeat;
 }
 #largeImage
 {
@@ -43,4 +56,12 @@
     display: none;
     z-index: 2;
     
+}
+.mainsec
+{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EAEAEA;
+    height: 1020px;
 }
