@@ -15,9 +15,21 @@ body
     margin-right: auto;
     background-color: #EAEAEA;
 }
+#days
+{
+    width: 40%;
+    margin:auto;
+    background-color: #e8c1ff;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+#daychanger
+{
+    display: none;
+}
 #texto
 {
-    
     width: 90%;
     margin: auto;
     text-align: center; 

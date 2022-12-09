@@ -1,7 +1,7 @@
 /* Site-wide styling here */
 body  
 {
-    background-color: #EAEAEA; /* Bara för att testa, ÄNDRA eller ta bort! */
+    background-color: #eaeaea; /* Bara för att testa, ÄNDRA eller ta bort! */
 }
 .casinoname
 {
@@ -31,7 +31,7 @@ body
     flex-flow: column;
     margin-left: 0px;
     margin-right: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 #colorchange
 {
@@ -48,19 +48,12 @@ body
     margin-bottom: 10px;
     background-color: #e8c1ff;
     border-radius: 15px;
+    font-size: 18px;
 }
 #divred, #divblue, #divgreen
 {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
-}
-#days
-{
-    width: 40%;
-    margin: auto;
-    background-color: #e8c1ff;
-    border-radius: 15px;
     margin-bottom: 10px;
 }
 .clock

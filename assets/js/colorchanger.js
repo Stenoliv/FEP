@@ -5,17 +5,31 @@ document.querySelector("#colorchange").addEventListener('click', function ()
     if (document.querySelector("#colormenu").style.display == 'flex')
     {
     document.querySelector("#colormenu").style.display = 'none';
-    document.querySelector("#daychange").style.display = 'none'
+    if(document.querySelector('#daychange')!= undefined)
+    {
+        document.querySelector("#daychange").style.display = 'none'
+    }
     }
     else
     {
         document.querySelector("#colormenu").style.display = 'flex';
-        document.querySelector("#daychange").style.display = 'flex'
+        if(document.querySelector('#daychange')!= undefined)
+        {
+            document.querySelector("#daychange").style.display = 'flex'
+        }
     }
 });
 
 document.body.style.backgroundColor = localStorage.getItem("background");
-document.querySelector('.mainsec').style.backgroundColor = localStorage.getItem("background");
+
+if(document.querySelector('.mainsec')!=undefined)
+{
+    document.querySelector('.mainsec').style.backgroundColor = localStorage.getItem("background");
+}
+if(document.querySelector('.gamebar')!=undefined)
+    {
+        document.querySelector('.gamebar').style.backgroundColor = localStorage.getItem("background");
+    }
 document.body.style.color = localStorage.getItem("textcolour");
 document.querySelector("#colors").value = localStorage.getItem("activesel");
 document.querySelector("#red").value = localStorage.getItem("red");
@@ -29,7 +43,14 @@ document.querySelector('#colors').addEventListener('change', function cd() {
     let i = active;
     
     document.querySelector('body').style.backgroundColor = colorArr[i];
-    document.querySelector('.mainsec').style.backgroundColor = colorArr[i];
+    if(document.querySelector('.gamebar')!=undefined)
+    {
+        document.querySelector('.gamebar').style.backgroundColor = colorArr[i];
+    }
+    if(document.querySelector('.mainsec')!=undefined)
+    {
+        document.querySelector('.mainsec').style.backgroundColor = colorArr[i];
+    }
     localStorage.setItem("background", colorArr[i]);
     localStorage.setItem("activesel", i);
 })
