@@ -1,9 +1,25 @@
+body
+{
+    background-image: url("../images/redcurtains.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.mainsec
+{
+    width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EAEAEA;
+    height: 100%;
+    padding-bottom: 50px;
+}
 .thumb
 {
     height: 100px;
     cursor: pointer;
-    margin: 10px;
+    margin: 50px;
     margin-bottom: 40px;
+    box-shadow: #EAEAEA;
 }
 #thumbnails
 {
@@ -12,10 +28,10 @@
     margin-left: auto;
     width: 95%;
 }
-body
+img:not(#settings,#x)
 {
-    background-image: url("../images/redcurtains.jpg");
-    background-repeat: no-repeat;
+    border: 2px black;
+    box-shadow: 10px 10px 10px rgb(14, 14, 14);
 }
 #largeImage
 {
@@ -35,18 +51,9 @@ body
     max-width: 90%;
     max-height: 90%;
 }
-#colormenu
-{
-    display: none;
-}
-#colorchange
-{
-    background-color: rgb(255, 255, 255);
-    margin-left: 20px;
-}
 #x
 {
-    position: absolute;
+    position:fixed;
     top: 0;
     left: 0;
     margin-left: 94%;
@@ -57,11 +64,33 @@ body
     z-index: 2;
     
 }
-.mainsec
+@media screen and (max-width: 1000px)
 {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #EAEAEA;
-    height: 1020px;
+    .mainsec
+    {
+        width: 600px;
+    }
+}
+@media screen and (max-width:710px) 
+{
+    .casinoname
+    {
+        font-size: 40px;
+    }
+    .mainsec
+    {
+        width: 354px;
+    }   
+    #settings
+    {
+        width: 135%;
+    } 
+}
+
+@media screen and (max-width: 450px)
+{
+    .mainsec
+    {
+        width: 240px;
+    }
 }

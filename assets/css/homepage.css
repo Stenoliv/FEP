@@ -6,10 +6,7 @@ body
 {
     background-image: url("../images/casinobg.jpg");
     background-repeat:no-repeat;
-}
-.imglink
-{
-    width: 10%;
+    background-attachment: fixed;
 }
 .mainsec
 {
@@ -17,6 +14,42 @@ body
     margin-left: auto;
     margin-right: auto;
     background-color: #EAEAEA;
+}
+#texto
+{
+    
+    width: 90%;
+    margin: auto;
+    text-align: center; 
+}
+#olduser,#newuser
+{
+    display: none;
+    font-size: 30px;
+}
+#makeuser
+{
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+}
+#firstname, #lastname, #age
+{
+    background-color: #cad8ff;
+    margin: 10px;
+    border-radius: 6px;
+    font-size: 30px;
+    text-align: center;
+}
+#submit-btn
+{
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #cad8ff;
+    width: 30%;
+    font-size: 30px;
+    text-align: center;
 }
 #out
 {
@@ -42,48 +75,38 @@ body
     margin-bottom: 30px;
     cursor: pointer;
 }
-#makeuser
+@media screen and (max-width: 1000px)
 {
-    display: block;
-    align-items: center;
-    text-align: center;
-    margin-top: 60px;
-}
-#firstname
-{
-    background-color: #cad8ff;
-    margin: 10px;
-    border-radius: 6px;
-}
-#lastname
-{
-    background-color: #cad8ff;
-    margin: 10px;
-    border-radius: 6px;
-}
-#age
-{
-    background-color: #cad8ff;
-    margin: 10px;
-    border-radius: 6px;
-}
-#submit-btn
-{
-    margin: 10px;
-    border-radius: 10px;
-    background-color: #cad8ff;
-    width: 10%;
-}
-#textopen
-{
-    
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    
-}
-#olduser
-{
-    display: none;
-}
+    #firstname, #lastname, #age, #submit-btn
+    {
+        font-size: 22px;
 
+    }
+}
+@media screen and (max-width: 630px)
+{
+    .mainsec
+    {
+        width: 80%;
+    }
+    #texto,#olduser,#newuser
+    {
+        font-size: 18px;
+    }
+    #out
+    {
+        font-size: 20px;
+    }
+    
+}
+@media screen and (max-width: 440px)
+{
+    body
+    {
+        background-image: none;
+    }
+    .mainsec
+    {
+        width: 90%;
+    }
+}
