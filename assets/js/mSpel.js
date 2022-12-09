@@ -10,6 +10,7 @@ let flipCardBackDelay = 800;
 const max = 51;
 let choosenCards;
 let cardSlots;
+let cookieUpdated = false;
 
 //Game Variables
 let canGuessCards = false;
@@ -49,7 +50,7 @@ function init() {
 //Init Game
 function initGame(difficulty) {
     //Switch difficulty off game
-    if(difficulty === "easy-difficulty") {
+    if (difficulty === "easy-difficulty") {
         gameBoardX = 6;
         gameBoardY = 2;
         flipCardBackDelay = 1000;
@@ -57,7 +58,7 @@ function initGame(difficulty) {
         gameBoardX = 6;
         gameBoardY = 3;
         flipCardBackDelay = 750;
-    } else  { //Hard
+    } else { //Hard
         gameBoardX = 6;
         gameBoardY = 4;
         flipCardBackDelay = 500;
@@ -103,10 +104,10 @@ function initGame(difficulty) {
         card.addEventListener('mouseenter', () => playingCardHovered(card));
         card.addEventListener('mouseleave', () => playingCardNotHovered(card));
     })
-        //Add click eventhandler
-        document.querySelectorAll('.card').forEach((card) => {
-            card.addEventListener('click', playingCardClicked, true);
-        })
+    //Add click eventhandler
+    document.querySelectorAll('.card').forEach((card) => {
+        card.addEventListener('click', playingCardClicked, true);
+    })
 
     //Start GameLoop
     gameLoop()
@@ -126,7 +127,7 @@ function initGameEnd() {
         </div>
     </div>
     `
-    document.querySelector('.restartButton').addEventListener('click',() => restartGame());
+    document.querySelector('.restartButton').addEventListener('click', () => restartGame());
 }
 
 
@@ -231,27 +232,22 @@ async function checkFlippedCards(Arr) {
     canGuessCards = false;
     let sameCards = false;
     if (Arr.length >= 2) {
-        console.log("2 cards flipped");
         let same = 0, numberToCompare = 0;
         for (let i = 0; i < Arr.length; i++) {
             if (i == 0) {
                 numberToCompare = Arr[i].querySelector('.card-front').value;
                 same++;
             } else if (numberToCompare == Arr[i].querySelector('.card-front').value) {
-                console.log("first-card: " + Arr[0].querySelector('.card-front').value + " / Comparing-card: " + Arr[i].querySelector('.card-front').value);
                 same++;
-                console.log("Same cards");
             };
         };
         if (same == Arr.length) sameCards = true;
         if (sameCards == true) {
-            console.log("SameCards flipped");
             Arr.forEach((elem) => elem.removeEventListener('click', playingCardClicked, true));
             resetFlippedCardArray();
             canGuessCards = true;
             pairsTurned++;
         } else {
-            console.log("Not the same cards");
             await sleep(flipCardBackDelay);
             Arr.forEach((elem) => elem.classList.remove("flipCard"));
             resetFlippedCardArray();
@@ -269,7 +265,9 @@ async function checkIfGameOver() {
         console.log("Game Won" + pairsTurned);
         cardsDIV.innerHTML = "GameWon";
         initGameEnd();
+        updateCookie();
     }
+
 }
 //Function to reset flipped card array
 function resetFlippedCardArray() {
@@ -288,6 +286,35 @@ function restartGame() {
     numberOffMissTries = 0;
     cardSlots = [];
     choosenCards = [];
+    cookieUpdated = false;
 
     init();
+}
+//Function för att updatera spel gånger cookie 
+function updateCookie() {
+    if (cookieUpdated == false) {
+        cookieUpdated = true;
+        //Läs in nuvarande värde
+        let score = geSaldo("timesPlayed");
+        let d = new Date();
+        d.setTime(d.getTime() + (60 * 24 * 60 * 60 * 1000));
+        score++;
+        document.cookie = `timesPlayed = ${score}; expires=${d} ;path=/`
+        console.log(score);
+    }
+}
+function geSaldo(saldo) {
+    let namn = saldo + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(namn) == 0) {
+            return c.substring(namn.length, c.length);
+        }
+    }
+    return "";
 }
