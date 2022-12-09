@@ -6,22 +6,24 @@ let manual = 1;
 
 weekend = new Date();
 console.log(weekend);
-
+const adr =window.location.pathname.split("/");
 function wknd()
 {
-    const adr =window.location.pathname.split("/");
     if(weekend.getDay()=== 6 || weekend.getDay() === 0 || manual == 0)
     {
         window.location.replace("../pages/closed.html");
     }
-    else if(weekend.getDay()===1,2,3,4,5 && adr[2] =="closed.html")
+    else if(weekend.getDay()===1,2,3,4,5 && adr[1] =="closed.html" && manual!= 0)
     {
         window.location.replace("../index.html");
     }
     console.log(weekend);
 }
-document.addEventListener('DOMContentLoaded',wknd);
-
+if(adr[2] != "closed.html")
+{
+    wknd();
+    console.log("why am i runnning")
+}
 //clock
 setInterval(function()
 {

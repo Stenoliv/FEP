@@ -24,3 +24,8 @@ let time = open - now;
     document.querySelector("#openIn").innerText = h + " Hours " + m + " Minutes " + s + " Seconds ";
     
 }, 100);
+
+if(weekend.getDay() == 6 || weekend.getDay() == 0)
+{
+    document.querySelector('.navbar').style.display = 'none';
+}

@@ -1,24 +1,26 @@
 
 //Changes backgroundcolour of the page with a select menu with a few alternatives
-document.querySelector("#colorchange").addEventListener('click', function ()
+
+document.querySelector("#settings-btn").addEventListener('click', function ()
 {
-    if (document.querySelector("#colormenu").style.display == 'flex')
+    if (document.querySelector("#settings").style.display == 'flex')
     {
-    document.querySelector("#colormenu").style.display = 'none';
+    document.querySelector("#settings").style.display = 'none';
     if(document.querySelector('#daychange')!= undefined)
     {
-        document.querySelector("#daychange").style.display = 'none'
+        document.querySelector("#daychange").style.display = 'flex'
     }
     }
     else
     {
-        document.querySelector("#colormenu").style.display = 'flex';
+        document.querySelector("#settings").style.display = 'flex';
         if(document.querySelector('#daychange')!= undefined)
         {
             document.querySelector("#daychange").style.display = 'flex'
         }
     }
 });
+
 
 document.body.style.backgroundColor = localStorage.getItem("background");
 

@@ -28,7 +28,7 @@ body
     margin-left: auto;
     width: 95%;
 }
-img:not(#settings,#x)
+img:not(#settingslogo,#x)
 {
     border: 2px black;
     box-shadow: 10px 10px 10px rgb(14, 14, 14);

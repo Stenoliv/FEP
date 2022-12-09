@@ -1,0 +1,63 @@
+body
+{
+    background-image: url("../images/casinobg.jpg");
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+}
+#openIn
+{
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 30px;
+    text-align: center;
+}
+.textc
+{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    font-size: 40px;
+}
+.mainsec
+{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    position: relative;
+    padding-bottom: 200px;
+    min-height: 100vh;
+}
+@media screen and (max-width: 1000px)
+{
+    .textc
+    {
+        font-size: 34px;
+    }
+    #openIn
+    {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 660px)
+{
+    #openIn
+    {
+        font-size: 20px;
+    }
+    .textc
+    {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 450px)
+{
+    #openIn
+    {
+        font-size: 14px;
+    }
+}

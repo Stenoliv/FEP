@@ -27,4 +27,5 @@ document.querySelector('#days').addEventListener('change', function cd()
     when();
     wknd();
     
+    
 })

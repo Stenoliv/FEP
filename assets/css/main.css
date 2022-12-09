@@ -20,12 +20,12 @@ body
     font-size: 20px;
     padding: 10px;
 }
-#settings
+#settingslogo
 {
     width: 40px;
     display: flex;
 }
-#colormenu
+#settings
 {
     display: none; 
     flex-flow: column;
@@ -33,7 +33,7 @@ body
     margin-right: 0px;
     margin-bottom: 0px;
 }
-#colorchange
+#settings-btn
 {
     border: none;
     border-radius: 10px;
@@ -62,12 +62,6 @@ body
     font-size: 24px;
     text-align: center;
 }
-#openIn
-{
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: underline;
-}
 .foot
 {
     background-color: black;
@@ -95,7 +89,7 @@ body
     {
         font-size: 18px ;
     }
-    #settings
+    #settingslogo
     {
         width: 30px;
     }
