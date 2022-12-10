@@ -1,7 +1,4 @@
-#mainBackGround
-{
-    z-index: -1;
-}
+/*Styling applied only on index.html*/
 body
 {
     background-image: url("../images/casinobg.jpg");

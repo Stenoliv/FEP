@@ -1,7 +1,7 @@
 /* Site-wide styling here */
 body  
 {
-    background-color: #eaeaea; /* Bara för att testa, ÄNDRA eller ta bort! */
+    background-color: #eaeaea;
 }
 .casinoname
 {
@@ -36,7 +36,6 @@ body
 #settings-btn
 {
     border: none;
-    border-radius: 10px;
     width: 10%;
     height: 10%;
 }
