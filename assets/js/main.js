@@ -19,10 +19,14 @@ function wknd() {
     }
     else if (manual == 0) {
         if (weekend.getDay() === 6 || weekend.getDay() === 0 || manual == 0) {
+            if(adr[2]!= "closed.html"){
             window.location.replace("../pages/closed.html");
+            }
         }
         else if (weekend.getDay() === 1, 2, 3, 4, 5 && adr[1] == "closed.html" && manual != 1) {
+            if(adr[2]=="closed.html"){
             window.location.replace("../index.html");
+            }
         }
     }
 }
@@ -30,13 +34,14 @@ if (adr[2] == "closed.html" && manual != 0 || adr[1] == "index.html" && manual !
     wknd();
 }
 else if (manual == 0) {
-    //checks once a minute if casino needs to be open
+    //checks once a minute if casino needs to be open or closed
     setInterval(function () {
         wknd()
         console.log("intervalset")
     }, 60000)
 
 }
+addEventListener("DOMContentLoaded",wknd());
 //clock
 setInterval(function () {
     let t = new Date();
