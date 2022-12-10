@@ -2,7 +2,11 @@
 function submitMoney() {
   console.log('submitMoney()');
   const add = document.querySelector('#amountToAdd').value;
-  const saldo = localStorage.getItem('saldo');
+  let saldo = localStorage.getItem('saldo');
+  if (saldo == null) {
+    localStorage.setItem('saldo', 0);
+    saldo = localStorage.getItem('saldo');
+  }
   if (add == 1) {
     console.log('+ 5€');
     const money = parseInt(saldo) + 5;
@@ -39,12 +43,11 @@ function addMoney(amount) {
 
 //take all money out off your account
 function takeMoney(amount) {
-  if (amount == 0)
-  {
+  if (amount == 0) {
     console.log('takeMoney()');
     console.log(localStorage.getItem('saldo'));
     console.log('removing Money');
-    localStorage.setItem('saldo',0);
+    localStorage.setItem('saldo', 0);
     console.log(localStorage.getItem('saldo') + " You now have this much on your account");
     updateSaldo();
   } else {
@@ -58,9 +61,8 @@ function takeMoney(amount) {
     console.log(localStorage.getItem('saldo') + " You now have this much on your account");
     updateSaldo();
   }
-  
-}
 
+}
 
 //update money on site 
 function updateSaldo() {

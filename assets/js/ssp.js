@@ -9,7 +9,7 @@ const gamebuttons = document.querySelector('#gameField');
 const betField = document.querySelector('#AmountOfBet');
 let playerSelection;
 let computerChoice;
-let roundScores = {player: 0, computer: 0}
+let roundScores = { player: 0, computer: 0 }
 const outputField = document.querySelector("#output");
 const roundsToWin = 3;
 let saldo = parseInt(localStorage.getItem('saldo'));
@@ -17,20 +17,20 @@ let bet;
 
 
 // Add click listeners and hide gamebuttons first
-buttons.forEach(elem => {elem.addEventListener('click',() => selectedButton(elem.value))});
-startButton.addEventListener('click',() => startGame());
+buttons.forEach(elem => { elem.addEventListener('click', () => selectedButton(elem.value)) });
+startButton.addEventListener('click', () => startGame());
 gamebuttons.style.display = "none";
 
 // definierar array av spel objecten
 const sspObjects = [
-    {name: "rock", wins: "scissors"},
-    {name: "scissors", wins: "paper"},
-    {name: "paper", wins: "rock"}
+    { name: "rock", wins: "scissors" },
+    { name: "scissors", wins: "paper" },
+    { name: "paper", wins: "rock" }
 ];
 
 
 function startGame() {
-    
+
     if (betField.value < saldo && betField.value > 0) {
         startBar.style.display = "none";
         roundScores.player = 0;
@@ -38,7 +38,7 @@ function startGame() {
         gamebuttons.style.display = "inline";
         outputField.innerHTML = 'Output';
         bet = betField.value;
-    } else alert('You do not have enough money, or wrong input!')  
+    } else alert('You do not have enough money, or wrong input!')
 }
 
 function selectedButton(type) {
@@ -48,7 +48,7 @@ function selectedButton(type) {
 };
 
 function gameRound() {
-    computerChoice = sspObjects[Math.floor(Math.random()*(sspObjects.length-1))];
+    computerChoice = sspObjects[Math.floor(Math.random() * (sspObjects.length - 1))];
     console.log(`players choice: ${playerSelection.name}`)
     console.log(`computers choice: ${computerChoice.name}`)
 
@@ -78,25 +78,53 @@ function gameRound() {
 function checkIfWinner() {
     if (roundScores.player >= roundsToWin) {
         startBar.style.display = "flex";
-        outputField.innerHTML = `You won the game! ${roundScores.player+" : "+roundScores.computer}`;
+        outputField.innerHTML = `You won the game! ${roundScores.player + " : " + roundScores.computer}`;
         addMoney(bet);
         gamebuttons.style.display = "none";
+        updateCookie();
     } else if (roundScores.computer >= roundsToWin) {
         startBar.style.display = "flex";
-        outputField.innerHTML = `Computer won the game! ${roundScores.computer+" : "+roundScores.player}`;
+        outputField.innerHTML = `Computer won the game! ${roundScores.computer + " : " + roundScores.player}`;
         takeMoney(bet);
         gamebuttons.style.display = "none";
+        updateCookie();
     }
-    
+
+}
+
+//Function för att updatera spel gånger cookie 
+function updateCookie() {
+    //Läs in nuvarande värde
+    let score = geSaldo("timesPlayed");
+    let d = new Date();
+    d.setTime(d.getTime() + (60 * 24 * 60 * 60 * 1000));
+    score++;
+    document.cookie = `timesPlayed = ${score}; expires=${d} ;path=/`
+    console.log(score);
+}
+function geSaldo(saldo) {
+    let namn = saldo + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(namn) == 0) {
+            return c.substring(namn.length, c.length);
+        }
+    }
+    return "";
 }
 
 //updatera saldo box
-    //Update bank information
-    if (saldo == null) {
-        document.querySelector('#money').innerHTML = '0'
-    } else document.querySelector('#money').innerHTML = saldo + '€';
+//Update bank information
+if (saldo == null) {
+    document.querySelector('#money').innerHTML = '0'
+} else document.querySelector('#money').innerHTML = saldo + '€';
 
-
+//close game
 function closeGame() {
     startBar.style.display = "flex";
     outputField.innerHTML = 'Output';
