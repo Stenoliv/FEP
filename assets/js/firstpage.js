@@ -30,6 +30,7 @@ else {
             let output = ("Hello " + firstname + " your username is: " + usrn + ", Welcome to Razver!");
             document.querySelector('#out').innerText = output;
             localStorage.setItem("usrname", usrn);
+            localStorage.setItem("usersage", age);
         }
     };
 }

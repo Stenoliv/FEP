@@ -2,7 +2,7 @@
 
 console.log('main.js init'); // För att se att skriptet laddats in
 //Boolen manual is the main switch for if the casino is open / 0 means it is in neutral so decided by date, 1 means it is open, and 2 means it is closed.
-let manual = 0;
+let manual = 1;
 
 weekend = new Date();
 console.log(weekend);
@@ -37,7 +37,6 @@ else if (manual == 0) {
     //checks once a minute if casino needs to be open or closed
     setInterval(function () {
         wknd()
-        console.log("intervalset")
     }, 60000)
 
 }
