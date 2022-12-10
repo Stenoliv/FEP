@@ -1,71 +1,68 @@
+//Add money to your account "Button"
+function submitMoney() {
+  console.log('submitMoney()');
+  const add = document.querySelector('#amountToAdd').value;
+  const saldo = localStorage.getItem('saldo');
+  if (add == 1) {
+    console.log('+ 5€');
+    const money = parseInt(saldo) + 5;
+    localStorage.setItem('saldo', money);
+  } else if (add == 2) {
+    console.log('+ 10€');
+    const money = parseInt(saldo) + 10;
+    localStorage.setItem('saldo', money);
+  } else if (add == 3) {
+    console.log('+ 15€');
+    const money = parseInt(saldo) + 15;
+    localStorage.setItem('saldo', money);
+  } else if (add == 4) {
+    console.log('+ 25€');
+    const money = parseInt(saldo) + 25;
+    localStorage.setItem('saldo', money);
+  } else if (add == 5) {
+    console.log('+ 50€');
+    const money = parseInt(saldo) + 50;
+    localStorage.setItem('saldo', money);
+  } else console.log(add);
+  updateSaldo();
+}
 
-//funktion för att läsa in saldot från localCookie
-function geSaldo(saldo) {
-    let namn = saldo + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    console.log(decodedCookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(namn) == 0) {
-        return c.substring(namn.length, c.length);
-      }
-    }
-    return "";
+//Add money function
+function addMoney(amount) {
+  console.log(`addMoney(${amount})`);
+  const saldo = localStorage.getItem('saldo');
+  //Add amount to account
+  const nS = parseInt(saldo) + parseInt(amount);
+  localStorage.setItem('saldo', nS);
+  updateSaldo()
+}
+
+//take all money out off your account
+function takeMoney(amount) {
+  if (amount == 0)
+  {
+    console.log('takeMoney()');
+    console.log(localStorage.getItem('saldo'));
+    console.log('removing Money');
+    localStorage.setItem('saldo',0);
+    console.log(localStorage.getItem('saldo') + " You now have this much on your account");
+    updateSaldo();
+  } else {
+    console.log('takeMoney()');
+    console.log(localStorage.getItem('saldo'));
+    console.log('removing Money');
+    const cS = parseInt(localStorage.getItem('saldo'))
+    let nS = cS - amount;
+    if (nS < 0) nS = 0;
+    localStorage.setItem('saldo', nS);
+    console.log(localStorage.getItem('saldo') + " You now have this much on your account");
+    updateSaldo();
   }
+  
+}
 
-  //funktion för att tömma saldot
-  function tomSaldo(saldo) {
-    const currentSaldo = geSaldo(saldo);
-    const d = new Date();
-    d.setTime(d.getTime() - (365*24*60*60*1000));
-    let expires = "expires=" + d.toUTCString();
 
-    document.cookie = saldo + "=" + 0 + ";" + expires + ";path=/";
-
-    updateraSaldo();
-    }
-
-    //funktion för att updatera saldot på kontot
-  function angeSaldo(saldo,value,exdag) {
-    const currentSaldo = geSaldo('saldo');
-    const d = new Date();
-    d.setTime(d.getTime() + (exdag*24*60*60*1000));
-    let expires = "expires=" + d.toUTCString();
-    let nyttSaldo = Number(value) + Number(currentSaldo);
-    
-    document.cookie = saldo + "=" + nyttSaldo + ";" + expires + ";path=/";
-  }
-
-  //funktion för att updatera saldot på bank sidan.
-function updateraSaldo() {
-    let nyaSaldot = geSaldo("saldo");
-    if (nyaSaldot != "") {
-      document.getElementById("saldo").innerText = nyaSaldot;
-    } else {
-        document.getElementById("saldo").innerText = "0";
-    }
-  };
-
-document.getElementById("5Euro").addEventListener("click", function(){
-    angeSaldo('saldo', 5, 10);
-    updateraSaldo();
-});
-document.getElementById("15Euro").addEventListener("click", function(){
-    angeSaldo('saldo', 15, 10);
-    updateraSaldo();
-});
-document.getElementById("25Euro").addEventListener("click", function(){
-    angeSaldo('saldo', 25, 10);
-    updateraSaldo();
-});
-document.getElementById("50Euro").addEventListener("click", function(){
-    angeSaldo('saldo', 50, 10);
-    updateraSaldo();
-});
-document.getElementById("Tom").addEventListener("click", function(){
-    tomSaldo('saldo');
-});
+//update money on site 
+function updateSaldo() {
+  document.querySelector('#money').innerHTML = localStorage.getItem('saldo') + '€';
+}

@@ -58,12 +58,64 @@
         <h2>
             Memory Game
         </h2>
+        <div id="gameTimer">
+            <div id="Time">
+                <p>
+                    GameTimer
+                </p>
+                <div id="playTimer"></div>
+                <div id="timeWhenCloses"></div>
+            </div>
+            <section>
+                <select id="timeSelection">
+                    <option value="0">5min</option>
+                    <option value="1">10min</option>
+                    <option value="2">15min</option>
+                    <option value="3">30min</option>
+                    <option value="4">1h</option>
+                    <option value="5">1h 30min</option>
+                    <option value="6">2h</option>
+                    <option value="7">3h</option>
+                </select>
+                <button id="timerButton">
+                    Start Timer
+                </button>
+            </section>
+        </div>
+        
+        <div class="playerMoney">
+            <div id="bank">
+                <p>
+                    You have: 
+                </p>
+                <div id="money"></div>
+                <p>
+                    on your account!
+                </p>
+            </div>
+            
+            <select id="amountToAdd">
+                <option value="1">5€</option>
+                <option value="2">10€</option>
+                <option value="3">15€</option>
+                <option value="4">25€</option>
+                <option value="5">50€</option>
+            </select>
+            <button onclick="submitMoney()">
+                Add
+            </button>
+            <button onclick="takeMoney(0)">
+                Take Money
+            </button>
+        </div>
+
     </div>
     <div class="cards"></div>
 </body>
 
 <script src="../assets/js/main.js"></script>
-<script type="module" src="../assets/js/mSpel.js"></script>
-<script src="../assets/js/userTracking.js"></script>
 <script src="../assets/js/colorchanger.js"></script>
+<script src="../assets/js/gameTimer.js"></script>
+<script src="../assets/js/bank.js"></script>
+<script src="../assets/js/mSpel.js"></script>
 </html>

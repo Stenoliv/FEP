@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/CardGameBackground.png");
+    background-size: 512px;
+    background-repeat: repeat;
+}
+
+.Header {
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+}
+
+.GameBackground {
+    position: absolute;
+    width: 60%;
+    top: 25%;
+}
+
+.GameBoard {
+    display: inline;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 100%;
+    height: 100%;
+}
+
+.CardDeck {
+    position: absolute;
+    left: 65%;
+    top: 160px;
+}
+
+.playingCard{
+    width: 60%;
+    top: 150px;
+}
+
+.gameButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45%;
+}

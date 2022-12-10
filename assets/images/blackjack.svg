@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 508.00001 285.74999"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="blackjack.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.16"
+     inkscape:cx="-421.875"
+     inkscape:cy="915.625"
+     inkscape:window-width="1920"
+     inkscape:window-height="1129"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="804.9942"
+       y="360.75666"
+       width="896.66653"
+       height="194.33403"
+       id="rect2979" />
+  </defs>
+  <g
+     inkscape:label="Lager 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path28769"
+       style="fill:#000000;fill-rule:evenodd;stroke-width:3.6908;stroke-linejoin:round;paint-order:stroke markers fill"
+       d="m 12.955028,61.078924 c -12.70284885,13.03129 0,0 -12.70284885,13.03129 C 73.948859,127.82895 162.76857,156.82089 253.96558,156.92565 c 91.1859,-0.10476 179.99541,-29.0896 253.6872,-82.79625 -10.4437,-14.224266 0,0 -10.4437,-14.224266 C 431.4452,104.51965 333.43462,138.94606 253.96558,139.05312 174.48487,138.94626 78.724817,105.70546 12.955028,61.078924 Z"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="C:\Users\rasmu\Downloads\blackJack.png"
+       inkscape:export-xdpi="491.51999"
+       inkscape:export-ydpi="491.51999" />
+    <rect
+       style="fill:#001b72;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:14.2448;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       id="rect29926"
+       width="89.974274"
+       height="141.94359"
+       x="212.15479"
+       y="132.58871"
+       ry="13.68131"
+       inkscape:export-filename="C:\Users\rasmu\Downloads\blackJack.png"
+       inkscape:export-xdpi="491.51999"
+       inkscape:export-ydpi="491.51999" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-77.264533,-18.457949)"
+       id="text2977"
+       style="font-size:100px;line-height:200px;font-family:sans-serif;white-space:pre;shape-inside:url(#rect2979)"
+       x="101.77734"
+       y="0"
+       inkscape:export-filename="C:\Users\rasmu\Downloads\blackJack.png"
+       inkscape:export-xdpi="491.51999"
+       inkscape:export-ydpi="491.51999"><tspan
+         x="892.80469"
+         y="490.73633"
+         id="tspan31859"><tspan
+           style="font-weight:bold;font-family:Ravie;-inkscape-font-specification:'Ravie Bold';text-align:center;text-anchor:middle"
+           id="tspan31857">Black Jack</tspan></tspan></text>
+  </g>
+</svg>

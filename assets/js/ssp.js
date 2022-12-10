@@ -3,13 +3,17 @@ console.log('ssp.js init');
 
 // Variabler
 const buttons = document.querySelectorAll('.gameButton');
-const startButton = document.querySelector('#startGameButton');
+const startBar = document.querySelector('#startGame');
+const startButton = document.querySelector('#startGameButton')
 const gamebuttons = document.querySelector('#gameField');
+const betField = document.querySelector('#AmountOfBet');
 let playerSelection;
 let computerChoice;
 let roundScores = {player: 0, computer: 0}
 const outputField = document.querySelector("#output");
 const roundsToWin = 3;
+let saldo = parseInt(localStorage.getItem('saldo'));
+let bet;
 
 
 // Add click listeners and hide gamebuttons first
@@ -26,10 +30,15 @@ const sspObjects = [
 
 
 function startGame() {
-    startButton.style.display = "none";
-    roundScores.player = 0;
-    roundScores.computer = 0;
-    gamebuttons.style.display = "inline";
+    
+    if (betField.value < saldo && betField.value > 0) {
+        startBar.style.display = "none";
+        roundScores.player = 0;
+        roundScores.computer = 0;
+        gamebuttons.style.display = "inline";
+        outputField.innerHTML = 'Output';
+        bet = betField.value;
+    } else alert('You do not have enough money, or wrong input!')  
 }
 
 function selectedButton(type) {
@@ -68,11 +77,28 @@ function gameRound() {
 
 function checkIfWinner() {
     if (roundScores.player >= roundsToWin) {
-        startButton.style.display = "inline";
+        startBar.style.display = "flex";
         outputField.innerHTML = `You won the game! ${roundScores.player+" : "+roundScores.computer}`;
+        addMoney(bet);
+        gamebuttons.style.display = "none";
     } else if (roundScores.computer >= roundsToWin) {
-        startButton.style.display = "inline";
+        startBar.style.display = "flex";
         outputField.innerHTML = `Computer won the game! ${roundScores.computer+" : "+roundScores.player}`;
+        takeMoney(bet);
+        gamebuttons.style.display = "none";
     }
     
+}
+
+//updatera saldo box
+    //Update bank information
+    if (saldo == null) {
+        document.querySelector('#money').innerHTML = '0'
+    } else document.querySelector('#money').innerHTML = saldo + '€';
+
+
+function closeGame() {
+    startBar.style.display = "flex";
+    outputField.innerHTML = 'Output';
+    gamebuttons.style.display = "none";
 }

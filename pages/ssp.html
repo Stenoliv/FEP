@@ -55,9 +55,64 @@
             </select>
             
         </div>
-    <h2>
-        Sten, sax eller påse
-    </h2>
+
+        
+        <div class="gamebar">
+            <h2>
+                Rock, Paper and Scissors
+            </h2>
+            <div id="gameTimer">
+                <div id="Time">
+                    <p>
+                        GameTimer
+                    </p>
+                    <div id="playTimer"></div>
+                    <div id="timeWhenCloses"></div>
+                </div>
+                <section>
+                    <select id="timeSelection">
+                        <option value="0">5min</option>
+                        <option value="1">10min</option>
+                        <option value="2">15min</option>
+                        <option value="3">30min</option>
+                        <option value="4">1h</option>
+                        <option value="5">1h 30min</option>
+                        <option value="6">2h</option>
+                        <option value="7">3h</option>
+                    </select>
+                    <button id="timerButton">
+                        Start Timer
+                    </button>
+                </section>
+            </div>
+            
+            <div class="playerMoney">
+                <div id="bank">
+                    <p>
+                        You have: 
+                    </p>
+                    <div id="money"></div>
+                    <p>
+                        on your account!
+                    </p>
+                </div>
+                
+                <select id="amountToAdd">
+                    <option value="1">5€</option>
+                    <option value="2">10€</option>
+                    <option value="3">15€</option>
+                    <option value="4">25€</option>
+                    <option value="5">50€</option>
+                </select>
+                <button onclick="submitMoney()">
+                    Add
+                </button>
+                <button onclick="takeMoney(0)">
+                    Take Money
+                </button>
+            </div>
+    
+        </div>
     <section id="gameField">
         <button class="gameButton" value="0">
             <img src="../assets/images/Sten.png">
@@ -68,18 +123,20 @@
         <button class="gameButton" value="2">
             <img src="../assets/images/paper.png">
         </button>
-        <br>
-        <br>
-        <div id="output">Output</div>
-        <br>
     </section>
+    <div id="output">Output</div>
 
-    <button id="startGameButton" style="display: block;">Start Game</button>
+    <div id="startGame">
+        <button id="startGameButton">Start Game</button>
+        <input type="number" id="AmountOfBet"></input>
+    </div>
     
     
+    
+    <script src="../assets/js/bank.js"></script>
     <script src="../assets/js/colorchanger.js"></script>
     <script src="../assets/js/main.js"></script> <!-- importera main.js (OBS ../ )-->
     <script src="../assets/js/ssp.js"></script> <!-- importera sidspecifik JS -->
-    <script src="../assets/js/userTracking.js"></script>
+    <script src="../assets/js/gameTimer.js"></script>
 </body>
 </html>

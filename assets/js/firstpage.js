@@ -25,7 +25,7 @@ else {
         if (age < 18) {
             alert("You are too young to play go away!");
         }
-        else if(age > 18 && lastname != "" && firstname != ""){
+        else if(age >= 18 && lastname != "" && firstname != ""){
             let use1 = firstname.slice(0, 3);
             let use2 = lastname.slice(0, 4);
             let usrn = use2.concat(use1);
