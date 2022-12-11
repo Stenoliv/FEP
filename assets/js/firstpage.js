@@ -39,8 +39,8 @@ else {
 
 //To open different sides when clicking icons on the first page
 document.querySelector("#memgame").addEventListener('click', function () {
-    window.location.assign("./pages/mspel.html");
+    window.location.assign("./mspel.html");
 })
 document.querySelector("#rpsgame").addEventListener('click', function () {
-    window.location.assign("./pages/ssp.html");
+    window.location.assign("./ssp.html");
 })

@@ -122,6 +122,7 @@ function playTimer() {
         timerText.innerHTML = '';
         document.querySelector('#timeWhenCloses').innerHTML = 'Timer out!';
         updateTimerButton();
+        alert('Timer Ran Out!');
     }
 }
 
