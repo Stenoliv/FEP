@@ -18,7 +18,7 @@ function wknd() {
         }
     }
     else if (manual == 0) {
-        if (weekend.getDay() === 6 || weekend.getDay() === 0 || manual == 0) {
+        if (weekend.getDay() === 6 || weekend.getDay() === 0) {
             if(adr[adr.length -1]!= "closed.html"){
             window.location.replace("./closed.html");
             }
